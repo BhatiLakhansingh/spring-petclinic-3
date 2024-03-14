@@ -1,11 +1,11 @@
-node (''){
+node(''){
     stage('SCM'){
         git branch: 'main', url: 'https://github.com/BhatiLakhansingh/spring-petclinic-3.git'
     }
     stage('BUILD'){
         sh 'mvn package'
     }
-    
+  }
     
     
 
