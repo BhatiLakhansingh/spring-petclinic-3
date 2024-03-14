@@ -1,10 +1,14 @@
 node(''){
+    stage('choice'){
+        echo "the project has $spc_branch to build"
+       }
     stage('SCM'){
         git branch: 'main', url: 'https://github.com/BhatiLakhansingh/spring-petclinic-3.git'
     }
     stage('BUILD'){
         sh 'mvn package'
     }
+  
   }
     
     
