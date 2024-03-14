@@ -10,7 +10,11 @@ node(''){
     }
     stage('archive artifacts'){
         archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
-    } 
+    }
+    stage('junit'){
+        junit stdioRetention: '', testResults: 'target/surefire-reports/*.xml'
+    }
+
   }
     
     
