@@ -8,7 +8,9 @@ node(''){
     stage('BUILD'){
         sh 'mvn package'
     }
-  
+    stage('archive artifacts'){
+        archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
+    } 
   }
     
     
